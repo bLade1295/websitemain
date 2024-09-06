@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        header{
+            font-family: "Ubuntu",sans-serif;
+  
+  width: 100%;
+  height: 88px;
+  
+ background-color: #A1C7E0;
+}
+h1{
+  padding: 15px 33px;  
+  align-content: center;
+  text-align: center;
+ justify-items: center;
+ color: antiquewhite;
+ box-sizing: border-box;
+}
+.container{
+    margin: 10px 12px 10px 10px;  
+    background-color: #E1EBF0;
+    height: 100vh;
+    width: 100%;
+
+}
+form{
+    margin: 25px 22px 18px 21px;
+    padding: 23px 33px;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    font-family: "Ubuntu",sans-serif;
+    text-align: center;
+
+    
+    
+}
+input[type=text] {
+    box-sizing: border-box;
+    height: 10%;
+    width:70%;
+    background-color:#A9CDD4;
+
+}
+#Email{
+
+    width: 70%;
+    background-color: #A9CDD4;
+}
+#newf{
+    width: 70%;
+    background-color: #A9CDD4;
+}
+#conf{
+    width: 70%;
+    background-color: #A9CDD4;
+}
+    </style>
+</head>
+<body>
+          
+                  <div class="container">
+                      <header> <h1>Park and Go</h1>  
+                      </header>
+
+        <form action="backend.php">
+            <div>
+                
+                <label for="Email">  Email      :</label>
+                <input type="email" name="Email" id="Email" style="font-size: x-large;">
+                
+            </div>
+            <br>
+            <div>
+                <label for="newf">New Password :</label>
+                <input type="password" name="" id="newf" style="font-size: x-large;">
+            </div>
+            <br>
+            <div>
+                
+                <label for="conf">Confirm Password :</label>
+                <input type="password" name="" id="conf"style="font-size: x-large;" >
+            </div>
+            <br>
+          <span>
+            <button  style="width: 83px; height: 33px;" > <a href="login.html" >Submit</a> </button>
+          </span> 
+            
+        </form>
+        
+    </div>
+</body>
+</html>
