@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Location selector</title>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo4qhw7iNOen15XPX3SOiMaaqnKbJ6V4U&callback=initMap&loading=async&libraries=&v=weekly" defer>
+    // maps,marker&v=beta
+</script>
+<!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&libraries=maps,marker&v=beta" defer>
+</script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         
         body{
@@ -14,7 +21,7 @@
             height: 180%;
            
             background-image: url(bkgimg2.webp);
-            z-index: -1;
+            z-index: -2;
         }
         form{
             border: 2px solid solid;
@@ -36,6 +43,7 @@
         }
        
         #Etime-input{
+            font-size: x-large;
             height: 70%;
             width: 60%;
             color: black;
@@ -44,15 +52,18 @@
             border-radius: 5px;
         }
         #Ltime-input{
+            font-size: x-large;
             height: 70%;
             width: 60%;
             color: black;
+            
             background-color: white;
             border: 2px solid black;
             border-radius: 5px;
             
         }
         #vehicles{
+            font-size: x-large;
             height:70%;
             width: 60%;
             color: black;
@@ -61,6 +72,7 @@
             border-radius: 5px;
         }
         #loc{
+            font-size: x-large;
             height:70%;
             width: 60%;
             color: black;
@@ -93,6 +105,7 @@
           
             
         }
+        
 
 
     </style>
@@ -105,25 +118,25 @@
         <h2 class="ch">Choose your location</h2>
         <form action="backend.php">
             <div>
-                <label for="Etime-input">Enter time :</label>
+                <label for="Etime-input" style="font-size: x-large;"><strong>Enter time :</strong></label>
               <!-- Enter Time: <input type="time" name="" id="Etime" placeholder="24:60">  -->
-              <input type="text" id="Etime-input" name="Etime-input" value="24:60" placeholder="HH:MM">
+              <input type="text" id="Etime-input" name="Etime-input" value="24:60" placeholder="HH:MM"style="height: 60px;">
             </div>
             <br>
             <div>
-                <label for="Ltime-input"> Exit time :</label>
+                <label for="Ltime-input"style="font-size: x-large;"><strong>Exit time :</strong></label>
                 <!-- label for="time-input">Enter Time:</label>  -->
-        <input type="text" id="Ltime-input" name="Ltime-input" value="24:60" placeholder="HH:MM">
+        <input type="text" id="Ltime-input" name="Ltime-input" value="24:60" placeholder="HH:MM" style="height: 60px;">
                <!-- Exit Time: <input type="time" name="" id="Ltime" value="24:60">  -->
             </div>
             <br>
             <div>
-                Vehicles: <select name="vehicles" id="vehicles" >
+                <label for="vehicles"style="font-size: x-large;"><strong>Vehicles :</strong></label><select name="vehicles" id="vehicles" style="height: 60px;">
                     <option value="" disabled selected> Select Vehicle </option>
                     <option value="4 wheeler">Hatchback</option>
                     <option value="4 wheeler">Sedan</option>
                     <option value="4 wheeler">SUV</option>
-                    <option value="2 wheeler">Bike</option>
+                    <option value="2 wheeler">Bike</option> 
                     <option value="2 wheeler" >Scooty</option>
                     <option value="2 wheeler">Activa</option>
                     <option value="2 wheeler">Jupiter</option>
@@ -132,15 +145,23 @@
                 <br>
                 <div>
             
-                    <label for="loc">  Location</label>
-                    <input type="text" id="loc">
+                    <label for="loc"style="font-size: x-large;"><strong>Location :</strong></label>
+                    <input type="text" id="loc"style="height: 60px;">
                 </div>
                 
                 <br>
+                <div id="map">
+                   
+                    
+                    <script src="script.js"></script>
+
+                </div>
                 
 
         </form>
     </div>
     
 </body>
+
+
 </html>
