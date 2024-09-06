@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Location selector</title>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo4qhw7iNOen15XPX3SOiMaaqnKbJ6V4U&callback=initMap&loading=async&libraries=&v=weekly" defer>
+    // maps,marker&v=beta
+</script>
+<!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&libraries=maps,marker&v=beta" defer>
+</script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        body{
+            font-family: "Ubuntu",sans-serif;
+            height: 180%;
+           
+            background-image: url(bkgimg2.webp);
+            z-index: -2;
+        }
+        form{
+            border: 2px solid solid;
+        }
+        input [type=text], input[type=time]{
+            width: 60%;
+            height: 70%;
+        }
+        .container{
+            height: 70%;
+            
+            width: 100%;
+            margin: 33px 33px;
+            padding: 13px;
+            box-sizing: border-box; 
+            justify-content: center;
+            text-align: center;
+            
+        }
+       
+        #Etime-input{
+            font-size: x-large;
+            height: 70%;
+            width: 60%;
+            color: black;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        #Ltime-input{
+            font-size: x-large;
+            height: 70%;
+            width: 60%;
+            color: black;
+            
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            
+        }
+        #vehicles{
+            font-size: x-large;
+            height:70%;
+            width: 60%;
+            color: black;
+            background-color: white;
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+        #loc{
+            font-size: x-large;
+            height:70%;
+            width: 60%;
+            color: black;
+            background-color: white;
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+        /* input{
+            height: 100vh;
+            width: 100vh;
+        } */
+        h2{
+            width: 100%;
+            padding: 35px;
+            color: whitesmoke;
+            text-align: center;
+            justify-content: center;
+          align-items: center;
+        }
+        header{
+            background-color: #ff9933;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            /*   */
+        }
+        h2{
+            font-size: larger;
+         font-size: xx-large;
+          
+            
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Park and Go</h1>
+    </header>
+    <div class="container">
+        <h2 class="ch">Choose your location</h2>
+        <form action="backend.php">
+            <div>
+                <label for="Etime-input" style="font-size: x-large;"><strong>Enter time :</strong></label>
+              <!-- Enter Time: <input type="time" name="" id="Etime" placeholder="24:60">  -->
+              <input type="text" id="Etime-input" name="Etime-input" value="" placeholder="HH:MM"style="height: 60px;">
+            </div>
+            <br>
+            <div>
+                <label for="Ltime-input"style="font-size: x-large;"><strong>Exit time :</strong></label>
+                <!-- label for="time-input">Enter Time:</label>  -->
+        <input type="text" id="Ltime-input" name="Ltime-input" value="" placeholder="HH:MM" style="height: 60px;">
+               <!-- Exit Time: <input type="time" name="" id="Ltime" value="24:60">  -->
+            </div>
+            <br>
+            <div>
+                <label for="vehicles"style="font-size: x-large;"><strong>Vehicles :</strong></label><select name="vehicles" id="vehicles" style="height: 60px;">
+                    <option value="" disabled selected> Select Vehicle </option>
+                    <option value="4 wheeler">Hatchback</option>
+                    <option value="4 wheeler">Sedan</option>
+                    <option value="4 wheeler">SUV</option>
+                    <option value="2 wheeler">Bike</option> 
+                    <option value="2 wheeler" >Scooty</option>
+                    <option value="2 wheeler">Activa</option>
+                    <option value="2 wheeler">Jupiter</option>
+                </select>
+                </div>
+                <br>
+                <div id="option">
+            
+                    <label for="loc"style="font-size: x-large;"><strong>Location :</strong></label><select name="loc" id="loc" onchange="location()"  height: 60px;">
+                        <option value="" disabled selected> Choose Location </option>
+                        <option value="Karelibaug">Karelibaug</option>
+                        <option value="Sama-Savli">Sama-Savli</option>
+                        <option value="Gotri">Gotri</option>
+                        <option value="Alkapuri">Alkapuri</option> 
+                        <option value="Manjalpur" >Manjalpur</option>
+                        <option value="Waghodia">Waghodia</option>
+                        <option value="Makarpura">Makarpura</option>
+                    </select>
+                   
+                </div>
+                
+                <br>
+                <div id="map">
+                   
+                    
+                    <script src="script.js"></script>
+
+                </div>
+                
+
+        </form>
+    </div>
+    
+</body>
+
+
+</html>
